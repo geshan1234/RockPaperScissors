@@ -1,0 +1,51 @@
+<!DOCKTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title> RockPaperScissors </title>
+</head>
+<body>
+    <script>
+
+        function getComputerChoice() {                            // function for random choice of computer
+            var randomNumber = Math.floor(Math.random() * 3);
+
+            var randomAnswer = "";
+    
+            switch (randomNumber){
+	        case 0:
+	            randomAnswer = "rock";
+	            break;
+	        case 1:
+	            randomAnswer = "paper";
+	            break;
+	        case 2:
+	            randomAnswer = "scissors";
+	            break;
+		}
+
+	console.log("computer's choice number : " + (randomNumber + 1));
+        return randomAnswer;
+        }
+
+        function compareSelections(playerSelection, computerSelection) {     // function for comparing the choices of computer and the player to select the winner
+	    
+   	    if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "rock")){
+		console.log("you win!");}
+	    else if (playerSelection == computerSelection) console.log("draw!");
+	    else console.log("computer wins!");
+
+        }
+	
+	var playerSelection = prompt("rock, paper or scissors :") //getting the player's answer
+	console.log("player's choise : "+ playerSelection);	//printing player's choice into the console
+
+        var computerSelection = getComputerChoice();    // calling the function of computer's choice and assign the returning value to a new variable
+	console.log("computer's choise : " + computerSelection);   // printing computer's choice into the console
+        compareSelections(playerSelection, computerSelection);    // compare the player's and computer's choices
+	
+        
+    </script>
+</body>
+</html>
+
